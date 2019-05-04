@@ -132,12 +132,12 @@
                         <div class="modal-body" style="">
                             <div>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
-                                    <a href="index.html" style="color: #FAFAFA;">Sebagai Guru</a>
+                                    <a href="{{url('login_guru')}}" style="color: #FAFAFA;">Sebagai Guru</a>
                                 </button>
                             </div>
                             <div>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
-                                    <a href="index.html" style="color: #FAFAFA;">Sebagai Orangtua</a>
+                                    <a href="{{url('login_ortu')}}" style="color: #FAFAFA;">Sebagai Orangtua</a>
                                 </button>
                             </div>
                         </div>
