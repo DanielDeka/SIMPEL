@@ -5,6 +5,7 @@
         @include('layouts.header')
     </head>
     <body>
+    
         <div id="page-container" class="sidebar-o sidebar-inverse side-scroll page-header-fixed main-content-boxed">
             <!-- Sidebar -->
             @include('guru.layout.sidebar')            

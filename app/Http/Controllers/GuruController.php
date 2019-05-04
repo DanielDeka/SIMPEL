@@ -18,18 +18,38 @@ class GuruController extends Controller
 
     public function daftarSiswa(Request $request)
     {
-        $data['guru'] = Guru::where('id',$request->session()->get('user'))->first();
-        $data['siswa'] = Siswa::where('id_guru',$request->session()->get('user'))->get();
-        $data['count'] = 1;
-
-
-        // $query = "SELECT a.id, a.nama, a.kelas, b.kehadiran, b.keterangan
-        //             FROM siswas a, absensis b 
-        //             WHERE a.id = b.id_siswa and a.id_guru=". $request->session()->get('user') ."";
-        // $respon = \DB::select(\DB::raw($query));
-        // dd($respon)
+        // STATIS
+        // $data['guru'] = Guru::where('id',$request->session()->get('user'))->first();
         // $data['siswa'] = Siswa::where('id_guru',$request->session()->get('user'))->get();
+        // $data['count'] = 1;
 
+
+
+        date_default_timezone_set('Asia/Jakarta');
+
+        $siswanya = Siswa::where('id_guru',$request->session()->get('user'))->first();
+        $harinya = Absensi::where('id_siswa', $siswanya->id)->first();
+        $data['siswa'] = null;
+        if($harinya != null)
+        {
+            $nowDay = substr($harinya->created_at, 24, 2);
+        
+
+        $dayNow = date("d");
+
+        $query = "SELECT a.id, a.nama, a.kelas, b.kehadiran, b.keterangan
+                    FROM siswas a, absensis b 
+                    WHERE a.id = b.id_siswa and a.id_guru=". $request->session()->get('user') ." and ". $nowDay ."=". $dayNow ."";
+        $respon = \DB::select(\DB::raw($query));
+
+        $data['siswa'] = $respon;
+        
+        // dd($data);
+        }
+        else
+        // $data['siswa'] = array();
+        $data['count'] = 1;
+        $data['guru'] = Guru::where('id',$request->session()->get('user'))->first();
 
     	return view('guru.daftar_siswa', $data);
     }
@@ -78,9 +98,9 @@ class GuruController extends Controller
             $absen = new Absensi;
             $absen->id_siswa = $data['siswa'][$key];
             $absen->kehadiran = $data['kehadiran'][$key];
+            $absen->created_at = Carbon::now();
             $absen->save();
         }
-        // dd($absen);
         return redirect('/guru/daftar_siswa');
     }
 }

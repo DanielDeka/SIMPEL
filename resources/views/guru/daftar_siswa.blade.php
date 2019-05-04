@@ -38,7 +38,7 @@
                     <div class="row gutters-tiny">
                         <!-- Latest Orders -->
                         <div class="col-xl">
-                            <h2 class="content-heading pt-0">Daftar Absensi Siswa Kelas 3A</h2>
+                            <h2 class="content-heading pt-0">Daftar Absensi Siswa {{$guru->siswa()->get()->kelas}}</h2>
                             <div class="block block-rounded">
                                 <div class="block-content">
                                     <table class="table table-borderless table-striped js-table-sections">
@@ -49,13 +49,21 @@
                                                 <th class="d-none d-sm-table-cell" style="width: 15%;">Absensi</th>
                                             </tr>
                                         </thead>
+                                        @if($siswa != NULL)
+
                                         @foreach($siswa as $siswa)
                                         <tbody class="js-table-sections-header">
                                             <tr>
                                                 <th class="text-center" scope="row">{{$count++}}</th>
                                                 <td>{{$siswa->nama}}</td>
                                                 <td class="d-none d-sm-table-cell">
-                                                    <span class="badge badge-danger">Tanpa Izin</span>
+                                                    @if($siswa->kehadiran == 1)
+                                                    <span class="badge badge-success">Hadir</span>
+                                                    @elseif($siswa->kehadiran == 2)
+                                                    <span class="badge badge-danger">Tidak Hadir</span>
+                                                    @elseif($siswa->kehadiran == 3)
+                                                    <span class="badge badge-warning">Izin</span>
+                                                    @endif
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -83,6 +91,7 @@
                                             </tr> -->
                                         </tbody>
                                         @endforeach
+                                        @endif
                                     </table>
                                 </div>
                             </div>
