@@ -74,7 +74,6 @@
                             </div>
                         </div>
                         <!-- END Latest Orders -->
-
                     </div>
                     <!-- END Latest Orders and Top Products -->
                 </div>
