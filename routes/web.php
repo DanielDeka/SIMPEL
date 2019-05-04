@@ -43,6 +43,7 @@ Route::group(['prefix' => 'ortu'], function(){
 	Route::get('/absensi', 'OrtuController@absensi');
 	Route::get('/laporan', 'OrtuController@laporan');
 	Route::get('/raport', 'OrtuController@raport');
+	Route::get('/laporan/{id}', 'OrtuController@comment');
 });
 
 

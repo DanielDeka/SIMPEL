@@ -3,6 +3,8 @@
 <!--[if gt IE 9]><!--> <html lang="en" class="no-focus"> <!--<![endif]-->
     <head>
         @include('layouts.header')
+        
+                                                    
     </head>
     <body>
         <div id="page-container" class="sidebar-o sidebar-inverse side-scroll page-header-fixed main-content-boxed">
@@ -58,21 +60,39 @@
 
                                     <!-- Messages -->
                                     <!-- Checkable Table (.js-table-checkable class is initialized in Codebase() -> uiHelperTableToolsCheckable()) -->
-                                    <table class="js-table-checkable table table-hover table-vcenter">
-                                        <tbody>
-                                            @foreach($laporans as $laporan)
+                                    <div class="row">
+                                    <div class="col-md-12">
+                                <!-- Default Elements -->
+                                        <div class="block">
+                                            <div class="block-content">
+                                                <form action="be_forms_elements_bootstrap.html" method="post" enctype="multipart/form-data" onsubmit="return false;">
+                                                    <div class="form-group row">
+                                                        <label class="col-12">Judul</label>
+                                                        <div class="col-md-9">
+                                                            <div class="form-control-plaintext">{{ $laporan->judul }}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-12" for="example-text-input">Detail</label>
+                                                        <div class="col-md-9">
+                                                            <div class="form-text text-muted">{{ $laporan->detail }}</div>
+                                                        </div>
+                                                    </div>
+                                                        
+                                                    <div class="js-chat-talk block-content block-content-full text-wrap-break-word overflow-y-auto" data-chat-id="4"></div>
 
-                                            <tr>
-                                                <td class="d-none d-sm-table-cell font-w600" style="width: 140px;">{{ $laporan->name }}</td>
-                                                <td>
-                                                    <a class="font-w600" href="{{url('ortu/laporan/'.$laporan->id)}}" target="blank" >{{ $laporan->judul }}</a>
-                                                    <div class="text-muted mt-5">{{ $laporan->detail }}</div>
-                                                </td>
-                                                <td class="d-none d-xl-table-cell font-w600 font-size-sm text-muted" style="width: 120px;">{{ $laporan->waktu }}</td>
-                                            </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
+                                    <!-- Chat Input -->
+                                                </form>
+                                                    <div class="js-chat-form block-content block-content-full block-content-sm bg-body-light">
+                                                        <form action="asdas.html" method="post">
+                                                            <input class="js-chat-input form-control" type="text" data-target-chat-id="4" placeholder="Type your message and hasdasdit enter..">
+                                                        </form>
+                                                    </div>
+                                            </div>
+                                        </div>
+                            <!-- END Default Elements -->
+                        </div>
+                    </div>
                                     <!-- END Messages -->
                                 </div>
                             </div>
@@ -88,11 +108,23 @@
             <!-- END Footer -->
         </div>
         <!-- END Page Container -->
+        <script src="{{ asset('assets/codebase/assets/js/pages/be_comp_chat.js') }}"></script>
+        <script>
+            jQuery(function () {
+                
+                // BeCompChat.addHeader(4, 'Yesterday');
+                // BeCompChat.addMessage(4, 'Hi Admin!');
+                // BeCompChat.addMessage(4, 'How are you?');
+                // BeCompChat.addHeader(4, 'Today');
+                // BeCompChat.addMessage(4, 'I\'m fine, thanks!', 'self')});
+        </script>   
+
         <script>
             jQuery(function () {
                 // Init page helpers (Table Tools helper)
                 Codebase.helpers('table-tools');
             });
         </script>
+
     </body>
 </html>

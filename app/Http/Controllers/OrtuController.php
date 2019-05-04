@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Ortu;
-use App\Laporan;
 use App\Siswa;
+use App\Komentar;
+use App\Nilai;
+use App\Pelajaran;
 
 class OrtuController extends Controller
 {
@@ -40,8 +42,27 @@ class OrtuController extends Controller
         return view('ortu.laporan', $data);
     }
 
-    public function raport()
+    public function raport(Request $request)
     {
-        return view('ortu.raport');
+        // dd($request->input('select2'));
+        $ortu = Ortu::where('id',$request->session()->get('user'))->first();
+        $siswa=Siswa::where('id_ortu',$ortu->id)->get();
+        if($request->input('select2') == null) {
+            $nilai = Nilai::where('id_rapor',1)->get();
+        }
+        else {
+            $nilai = Nilai::where('id_rapor',$request->input('select2'))->get();
+        }
+        
+        $pelajaran = Pelajaran::all();
+        return view('ortu.raport', compact('nilai','pelajaran','siswa'));
+    }
+
+    public function comment($id)
+    {
+        $data['komentars'] = Komentar::where('id_laporan', $id)->get();
+        $data['laporan'] = Laporan::where('id', $id)->first();
+        //dd($data['comment']);
+        return view('ortu.komentar_laporan', $data);
     }
 }
