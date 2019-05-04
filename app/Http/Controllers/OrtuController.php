@@ -12,6 +12,11 @@ class OrtuController extends Controller
         return view('ortu.dashboard');
     }
 
+    public function absensi()
+    {
+        return view('ortu.absensi');
+    }
+
     public function cekOrtu(Request $request)
     {
         $tabelOrtu = Ortu::where('email',$request->input('login-email'))->first();

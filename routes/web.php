@@ -41,6 +41,7 @@ Route::post('/post_ortu', 'OrtuController@cekOrtu');
 
 Route::group(['prefix' => 'ortu'], function(){
 	Route::get('', 'OrtuController@index');
+    Route::get('/absensi', 'OrtuController@absensi');
 });
 
 
