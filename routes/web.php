@@ -35,7 +35,7 @@ Route::group(['prefix' => 'guru', 'middleware' => 'sessionkw'], function(){
     Route::get('/form_nilai', 'GuruController@formNilai');
 });
 
-Route::group(['prefix' => 'ortu'], function(){
+Route::group(['prefix' => 'ortu', 'middleware' => 'sessionkw'], function(){
 	Route::get('', 'OrtuController@index');
 	Route::get('/absensi', 'OrtuController@absensi');
 	Route::get('/laporan', 'OrtuController@laporan');

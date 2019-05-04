@@ -8,6 +8,7 @@ use App\Siswa;
 use App\Komentar;
 use App\Nilai;
 use App\Pelajaran;
+use App\Laporan;
 
 class OrtuController extends Controller
 {
@@ -25,15 +26,17 @@ class OrtuController extends Controller
     {
         $tabelOrtu = Ortu::where('email',$request->input('login-email'))->first();
         if($tabelOrtu!=null){
+            $request->session()->put('user', $tabelOrtu->id);
             return redirect('/ortu');
         }else{
             return redirect()->back();
         }
     }
 
-    public function laporan()
+    public function laporan(Request $request)
     {
-        $data['laporans'] = Laporan::where('id_siswa', 21)->get();
+        $siswa = Siswa::where('id_ortu', $request->session()->get('user'))->first();
+        $data['laporans'] = Laporan::where('id_siswa', $siswa->id)->get();
         foreach ($data['laporans'] as $laporan) {
             $laporan->name = Siswa::where('id', $laporan->id_siswa)->first()->nama;
         }
@@ -53,7 +56,7 @@ class OrtuController extends Controller
     {
         $data['komentars'] = Komentar::where('id_laporan', $id)->get();
         $data['laporan'] = Laporan::where('id', $id)->first();
-        //dd($data['comment']);
+        //dd($data['komentars']);
         return view('ortu.komentar_laporan', $data);
     }
 }

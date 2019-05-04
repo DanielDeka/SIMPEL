@@ -117,6 +117,14 @@
                 // BeCompChat.addMessage(4, 'How are you?');
                 // BeCompChat.addHeader(4, 'Today');
                 // BeCompChat.addMessage(4, 'I\'m fine, thanks!', 'self')});
+                @foreach ($komentars as $komentar)
+                    @if($komentar->tipe==2)
+                        BeCompChat.addMessage(4, '{{$komentar->isi}}', 'self');
+                    @else
+                        BeCompChat.addMessage(4, '{{$komentar->isi}}');
+                    @endif
+                @endforeach 
+                });
         </script>   
 
         <script>
