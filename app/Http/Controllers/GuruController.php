@@ -41,7 +41,8 @@ class GuruController extends Controller
     {
         $tabelGuru = Guru::where('email',$request->input('login-email'))->first();
         if($tabelGuru!=null){
-            return view('guru.dashboard');
+            $request->session()->put('user', $tabelGuru->id);
+            return redirect('/guru');
         }else{
             return redirect()->back();
         }
