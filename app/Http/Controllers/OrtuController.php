@@ -11,12 +11,12 @@ class OrtuController extends Controller
     {
         return view('ortu.dashboard');
     }
-    
+
     public function cekOrtu(Request $request)
     {
         $tabelOrtu = Ortu::where('email',$request->input('login-email'))->first();
         if($tabelOrtu!=null){
-            return view('ortu.dashboard');
+            return redirect('/ortu');
         }else{
             return redirect()->back();
         }

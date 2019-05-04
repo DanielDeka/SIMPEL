@@ -26,7 +26,7 @@ Route::get('/login_ortu', function () {
     return view('login_ortu');
 });
 
-Route::post('/post_ortu', 'GuruController@cekGuru');
+Route::post('/post_ortu', 'OrtuController@cekOrtu');
 
 Route::group(['prefix' => 'guru'], function(){
 	Route::get('', 'GuruController@index');
@@ -37,7 +37,9 @@ Route::group(['prefix' => 'guru'], function(){
 	Route::get('/form_nilai', 'GuruController@formNilai');
 });
 
-Route::get('ortu', 'OrtuController@index');
+Route::group(['prefix' => 'ortu'], function(){
+	Route::get('', 'OrtuController@index');
+});
 
 Route::get('/test', 'TestController@getAllOrtu');
 Route::get('/test2', 'TestController@getAllOrtu2');
