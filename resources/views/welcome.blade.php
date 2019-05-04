@@ -16,8 +16,8 @@
                     <div class="content-header-section">
                         <!-- Logo -->
                         <div class="content-header-item">
-                            <a class="font-w700 mr-5" href="index.html">
-                                <span class="font-size-xl text-danger">SIMPEL</span>
+                            <a class="link-effect font-w700 mr-5" href="index.html">
+                                <span class="font-size-xl text-primary">SIMPEL</span>
                             </a>
                         </div>
                         <!-- END Logo -->
@@ -32,13 +32,13 @@
                         <!-- Color Themes + A few of the many header options (used just for demonstration) -->
                         <!-- Themes functionality initialized in Codebase() -> uiHandleTheme() -->
                         <div class="btn-group ml-5" role="group">
-                            <button type="button" class="btn btn-circle btn-danger" data-toggle="modal" data-target=".bd-example-modal-lg">
-                                <i class="fa fa-user"></i>
+                            <button type="button" class="btn btn-circle btn-primary" data-toggle="modal" data-target="#modal-slideup">
+                              <i class="fa fa-user"></i>
                             </button>
                         </div>
                         <!-- END Color Themes + A few of the many header options -->
                         <a class="font-w700 mr-5" href="index.html">
-                            <span class="font-size-xl text-danger">Masuk</span>
+                            <span class="font-size-xl text-primary">Masuk</span>
                         </a>
                         <!-- END Toggle Sidebar -->
                     </div>
@@ -47,28 +47,6 @@
                 <!-- END Header Content -->
 
                 <!-- Header Search -->
-                <div id="page-header-search" class="overlay-header">
-                    <div class="content-header content-header-fullrow">
-                        <form action="bd_search.html" method="post">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <!-- Close Search Section -->
-                                    <!-- Layout API, functionality initialized in Codebase() -> uiApiLayout() -->
-                                    <button type="button" class="btn btn-secondary px-15" data-toggle="layout" data-action="header_search_off">
-                                        <i class="fa fa-times"></i>
-                                    </button>
-                                    <!-- END Close Search Section -->
-                                </div>
-                                <input type="text" class="form-control" placeholder="Search or hit ESC.." id="page-header-search-input" name="page-header-search-input">
-                                <div class="input-group-append">
-                                    <button type="submit" class="btn btn-secondary px-15">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
                 <!-- END Header Search -->
 
                 <!-- Header Loader -->
@@ -93,7 +71,7 @@
                             <div>
                                 <div class="block-content">
                                     <p class="text-right py-100">
-                                        <span class="font-w700 mr-5 font-size-h2 text-danger">SIMPEL</span>
+                                        <span class="font-w700 mr-5 font-size-h1 text-primary">SIMPEL</span>
                                         <br>
                                         <span class="font-w700 mr-5 font-size-xl text">Sistem Informasi Monitoring Pelajar</span>
                                         <br>
@@ -119,32 +97,28 @@
             <!-- END Main Container -->
 
             <!-- Large modal -->
-            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button> -->
-            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
+            <div class="modal fade" id="modal-slideup" tabindex="-1" role="dialog" aria-labelledby="modal-slideup" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-slideup" role="document">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title" id="myLargeModalLabel" style="color: #E21313;">Masuk dengan akun Anda</h4>
-                            <button type="button" class="btn btn-circle btn-danger" data-dismiss="modal" aria-label="Close">
-                                <i class="fa fa-close"></i>
-                            </button>
-                        </div>
-                        <div class="modal-body" style="">
-                            <div>
-                                <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
-                                    <a href="index.html" style="color: #FAFAFA;">Sebagai Guru</a>
+                        <div class="block block-themed block-transparent mb-0">
+                            <div class="block-content">
+                                <button type="button" class="btn btn-lg btn-circle btn-primary mr-5 mb-5 pull-right" data-dismiss="modal" aria-label="Close">
+                                    <i class="fa fa-times"></i>
                                 </button>
+                                <p class="text-left">
+                                    <span class="font-w700 mr-5 font-size-h1 text-primary">Masuk dengan akun anda</span>
+                                    <br>
+                                    <br>
+                                    <a href="{{url('login_guru')}}"><button type="button" class="btn btn-hero btn-rounded btn-noborder btn-danger mr-5 mb-5">
+                                        Sebagai Guru
+                                    </button></a>
+                                    <br>
+                                    <br>
+                                    <a href="{{url('login_ortu')}}"><button type="button" class="btn btn-hero btn-rounded btn-noborder btn-danger mr-5 mb-5">
+                                        Sebagai Orangtua
+                                    </button></a>
+                                </p>
                             </div>
-                            <div>
-                                <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
-                                    <a href="index.html" style="color: #FAFAFA;">Sebagai Orangtua</a>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="modal-footer" style="color: #E21313;">
-                            <span class="float-left">
-                                Belum punya akun? Hubungi kami <b><a href="index.html" style="color: #E21313;">disini</a></b>.
-                            </span>
                         </div>
                     </div>
                 </div>

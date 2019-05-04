@@ -14,3 +14,33 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/test', 'TestController@createDummyAbsensi');
+
+Route::get('/login_guru', function () {
+    return view('login_guru');
+});
+
+Route::post('/post_guru', 'GuruController@cekGuru');
+
+Route::get('/login_ortu', function () {
+    return view('login_ortu');
+});
+
+Route::group(['prefix' => 'guru', 'middleware' => 'sessionkw'], function(){
+    Route::get('', 'GuruController@index');
+    Route::get('/daftar_siswa', 'GuruController@daftarSiswa');
+    Route::get('/absensi', 'GuruController@absensiSiswa');
+    Route::get('/form_laporan', 'GuruController@formLaporan');
+    Route::get('/daftar_laporan', 'GuruController@daftarLaporan');
+    Route::get('/form_nilai', 'GuruController@formNilai');
+});
+
+
+Route::post('/post_ortu', 'OrtuController@cekOrtu');
+
+
+Route::group(['prefix' => 'ortu'], function(){
+	Route::get('', 'OrtuController@index');
+});
+
+
