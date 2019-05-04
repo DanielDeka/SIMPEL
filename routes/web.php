@@ -20,9 +20,13 @@ Route::get('/login_guru', function () {
     return view('login_guru');
 });
 
+Route::post('/post_guru', 'GuruController@cekGuru');
+
 Route::get('/login_ortu', function () {
     return view('login_ortu');
 });
+
+Route::post('/post_ortu', 'GuruController@cekGuru');
 
 Route::group(['prefix' => 'guru'], function(){
 	Route::get('', 'GuruController@index');
