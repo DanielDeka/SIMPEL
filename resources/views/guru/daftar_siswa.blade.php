@@ -49,10 +49,11 @@
                                                 <th class="d-none d-sm-table-cell" style="width: 15%;">Absensi</th>
                                             </tr>
                                         </thead>
+                                        @foreach($siswa as $siswa)
                                         <tbody class="js-table-sections-header">
                                             <tr>
-                                                <th class="text-center" scope="row">1</th>
-                                                <td>Alam Cahya Kumolo</td>
+                                                <th class="text-center" scope="row">{{$count++}}</th>
+                                                <td>{{$siswa->nama}}</td>
                                                 <td class="d-none d-sm-table-cell">
                                                     <span class="badge badge-danger">Tanpa Izin</span>
                                                 </td>
@@ -81,70 +82,7 @@
                                                 </td>
                                             </tr>
                                         </tbody>
-                                        <tbody class="js-table-sections-header">
-                                            <tr>
-                                                <th class="text-center" scope="row">2</th>
-                                                <td>Abyan "myans" Dafa</td>
-                                                <td class="d-none d-sm-table-cell">
-                                                    <span class="badge badge-info">Izin</span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                        <tbody>
-                                            <tr>
-                                                <td class="text-center"></td>
-                                                <td class="font-w600 text-muted">Senin, 6 April 2019</td>
-                                                <td class="font-size-sm">
-                                                    <span class="badge badge-danger">Tanpa Izin</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center"></td>
-                                                <td class="font-w600 text-muted">Selasa, 7 April 2019</td>
-                                                <td class="font-size-sm">
-                                                    <span class="badge badge-success">Hadir</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center"></td>
-                                                <td class="font-w600 text-muted">Rabu, 8 April 2019</td>
-                                                <td class="font-size-sm">
-                                                    <span class="badge badge-success">Hadir</span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                        <tbody class="js-table-sections-header">
-                                            <tr>
-                                                <th class="text-center" scope="row">3</th>
-                                                <td>Fandy "Jinusean" Mohammad</td>
-                                                <td class="d-none d-sm-table-cell">
-                                                    <span class="badge badge-success">Hadir</span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                        <tbody>
-                                            <tr>
-                                                <td class="text-center"></td>
-                                                <td class="font-w600 text-muted">Senin, 6 April 2019</td>
-                                                <td class="font-size-sm">
-                                                    <span class="badge badge-danger">Tanpa Izin</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center"></td>
-                                                <td class="font-w600 text-muted">Selasa, 7 April 2019</td>
-                                                <td class="font-size-sm">
-                                                    <span class="badge badge-success">Hadir</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center"></td>
-                                                <td class="font-w600 text-muted">Rabu, 8 April 2019</td>
-                                                <td class="font-size-sm">
-                                                    <span class="badge badge-success">Hadir</span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
+                                        @endforeach
                                     </table>
                                 </div>
                             </div>

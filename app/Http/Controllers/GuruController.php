@@ -4,37 +4,48 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Guru;
+use App\Siswa;
 
 class GuruController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-    	return view('guru.dashboard');
+        $data['guru'] = Guru::where('id',$request->session()->get('user'))->first();
+    	return view('guru.dashboard', $data);
     }
 
-    public function daftarSiswa()
+    public function daftarSiswa(Request $request)
     {
-    	return view('guru.daftar_siswa');
+        $data['guru'] = Guru::where('id',$request->session()->get('user'))->first();
+        $data['siswa'] = Siswa::where('id_guru',$request->session()->get('user'))->get();
+        $data['count'] = 1;
+    	return view('guru.daftar_siswa', $data);
     }
 
-    public function absensiSiswa()
+    public function absensiSiswa(Request $request)
     {
-    	return view('guru.absensi');
+        $data['guru'] = Guru::where('id',$request->session()->get('user'))->first();
+        $data['siswa'] = Siswa::where('id_guru',$request->session()->get('user'))->get();
+        $data['count'] = 1;
+    	return view('guru.absensi', $data);
     }
 
-    public function formLaporan()
+    public function formLaporan(Request $request)
     {
-    	return view('guru.form_laporan');
+        $data['guru'] = Guru::where('id',$request->session()->get('user'))->first();
+    	return view('guru.form_laporan', $data);
     }
 
-    public function daftarLaporan()
+    public function daftarLaporan(Request $request)
     {
-    	return view('guru.daftar_laporan');
+        $data['guru'] = Guru::where('id',$request->session()->get('user'))->first();
+    	return view('guru.daftar_laporan', $data);
     }
 
-    public function formNilai()
+    public function formNilai(Request $request)
     {
-    	return view('guru.form_nilai');
+        $data['guru'] = Guru::where('id',$request->session()->get('user'))->first();
+    	return view('guru.form_nilai', $data);
     }
 
     public function cekGuru(Request $request)

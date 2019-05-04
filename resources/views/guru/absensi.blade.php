@@ -49,11 +49,12 @@
                                                 <th class="d-none d-sm-table-cell" style="width: 15%;">Absensi</th>
                                             </tr>
                                         </thead>
+                                        @foreach($siswa as $siswa)
                                         <tbody>
                                             <tr>
-                                                <th class="text-center" scope="row">1</th>
-                                                <td>Alam Cahya Kumolo</td>
-                                                <td class="d-none d-sm-table-cell">
+                                                <th class="text-center" scope="row">{{$count}}</th>
+                                                <td>{{$siswa->nama}}</td>
+                                                <td class="d-none d-sm-table-cell" id="kehadiran[{{($count++) -1}}]">
                                                     <select class="form-control">
                                                         <option value="1" selected>Hadir</option>
                                                         <option value="2">Tanpa Izin</option>
@@ -62,32 +63,7 @@
                                                 </td>
                                             </tr>
                                         </tbody>
-                                        <tbody>
-                                            <tr>
-                                                <th class="text-center" scope="row">2</th>
-                                                <td>Abyan "myans" Dafa</td>
-                                                <td class="d-none d-sm-table-cell">
-                                                    <select class="form-control">
-                                                        <option value="1" selected>Hadir</option>
-                                                        <option value="2">Tanpa Izin</option>
-                                                        <option value="3">Izin</option>
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                        <tbody>
-                                            <tr>
-                                                <th class="text-center" scope="row">3</th>
-                                                <td>Fandy "Jinusean" Mohammad</td>
-                                                <td class="d-none d-sm-table-cell">
-                                                    <select class="form-control">
-                                                        <option value="1" selected>Hadir</option>
-                                                        <option value="2">Tanpa Izin</option>
-                                                        <option value="3">Izin</option>
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                        </tbody>
+                                        @endforeach
                                     </table>
                                     <div class="form-group row">
                                         <div class="col-md-9 pull-right">
