@@ -24,7 +24,7 @@
                 <div class="bg-body-light border-b">
                     <div class="content py-5 text-center">
                         <nav class="breadcrumb bg-body-light mb-0">
-                            <a class="breadcrumb-item" href="be_pages_ecom_dashboard.html">Guru</a>
+                            <a class="breadcrumb-item" href="{{url('guru')}}">Guru</a>
                             <span class="breadcrumb-item active">Laporan</span>
                             <span class="breadcrumb-item active">Buat Laporan</span>
                         </nav>

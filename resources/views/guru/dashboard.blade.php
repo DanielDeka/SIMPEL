@@ -16,6 +16,17 @@
 
             <!-- Main Container -->
             <main id="main-container">
+                <!-- Breadcrumb -->
+                <div class="bg-body-light border-b">
+                    <div class="content py-5 text-center">
+                        <nav class="breadcrumb bg-body-light mb-0">
+                            <a class="breadcrumb-item" href="{{url('guru')}}">Guru</a>
+                            <span class="breadcrumb-item active">Dashboard</span>
+                        </nav>
+                    </div>
+                </div>
+                <!-- END Breadcrumb -->
+
                 <!-- Hero -->
                 <div class="bg-image" style="background-image: url({{asset('assets/codebase/assets/img/photos/alam.jpg')}});">
                     <div class="bg-black-op-75">
@@ -28,17 +39,6 @@
                     </div>
                 </div>
                 <!-- END Hero -->
-
-                <!-- Breadcrumb -->
-                <div class="bg-body-light border-b">
-                    <div class="content py-5 text-center">
-                        <nav class="breadcrumb bg-body-light mb-0">
-                            <a class="breadcrumb-item" href="be_pages_ecom_dashboard.html">Guru</a>
-                            <span class="breadcrumb-item active">Dashboard</span>
-                        </nav>
-                    </div>
-                </div>
-                <!-- END Breadcrumb -->
 
                 <!-- Page Content -->
                 
