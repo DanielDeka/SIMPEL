@@ -226,15 +226,16 @@ class TestController extends Controller
 
 
     public function getAllOrtu(Request $request){
-        $request->session()->put('key', 'username');
+        $request->session()->put('user', 'username');
+        return "success";
+    }
+
+    public function getAllOrtu3(Request $request){
         return "success";
     }
     
     public function getAllOrtu2(Request $request){
-        if($request->session()->get('key') == null)
-            return "null bego";
-        else
-            return "berhasil yeay";
+        return "berhasil yeay";
     }
 
 

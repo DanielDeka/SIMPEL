@@ -78,12 +78,13 @@
                                 <!-- Sign In Form -->
                                 <!-- jQuery Validation (.js-validation-signin class is initialized in js/pages/op_auth_signin.js) -->
                                 <!-- For more examples you can check out https://github.com/jzaefferer/jquery-validation -->
-                                <form class="js-validation-signin px-30" action="be_pages_auth_all.html" method="post">
+                                <form class="js-validation-signin px-30" action="{{url('post_guru')}}" method="post">
+                                @csrf
                                     <div class="form-group row">
                                         <div class="col-12">
                                             <div class="form-material floating">
-                                                <input type="text" class="form-control" id="login-username" name="login-username">
-                                                <label for="login-username">Username</label>
+                                                <input type="text" class="form-control" id="login-email" name="login-email">
+                                                <label for="login-email">Email</label>
                                             </div>
                                         </div>
                                     </div>

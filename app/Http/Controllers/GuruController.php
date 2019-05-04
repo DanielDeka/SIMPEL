@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Guru;
 
 class GuruController extends Controller
 {
@@ -34,5 +35,16 @@ class GuruController extends Controller
     public function formNilai()
     {
     	return view('guru.form_nilai');
+    }
+
+    public function cekGuru(Request $request)
+    {
+        $tabelGuru = Guru::where('email',$request->input('login-email'))->first();
+        if($tabelGuru!=null){
+            $request->session()->put('user', $tabelGuru->id);
+            return redirect('/guru');
+        }else{
+            return redirect()->back();
+        }
     }
 }
