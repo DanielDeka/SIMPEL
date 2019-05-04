@@ -35,13 +35,13 @@ Route::group(['prefix' => 'guru', 'middleware' => 'sessionkw'], function(){
     Route::get('/form_nilai', 'GuruController@formNilai');
 });
 
-
-Route::post('/post_ortu', 'OrtuController@cekOrtu');
-
-
 Route::group(['prefix' => 'ortu'], function(){
 	Route::get('', 'OrtuController@index');
-    Route::get('/raport', 'OrtuController@raport');
+	Route::get('/absensi', 'OrtuController@absensi');
+	Route::get('/laporan', 'OrtuController@laporan');
+	Route::get('/raport', 'OrtuController@raport');
 });
+
+Route::post('/post_ortu', 'OrtuController@cekOrtu');
 
 
