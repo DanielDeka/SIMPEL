@@ -34,22 +34,20 @@ class GuruController extends Controller
         $data['siswa'] = null;
         if($harinya != null)
         {
-            $nowDay = substr($harinya->created_at, 24, 2);
-        
+            $nowDay = substr($harinya->created_at, 8, 2);
+           
 
-        $dayNow = date("d");
+            $dayNow = date("d");
 
-        $query = "SELECT a.id, a.nama, a.kelas, b.kehadiran, b.keterangan
-                    FROM siswas a, absensis b 
-                    WHERE a.id = b.id_siswa and a.id_guru=". $request->session()->get('user') ." and ". $nowDay ."=". $dayNow ."";
-        $respon = \DB::select(\DB::raw($query));
+            $query = "SELECT a.id, a.nama, a.kelas, b.kehadiran, b.keterangan
+                        FROM siswas a, absensis b 
+                        WHERE a.id = b.id_siswa and a.id_guru=". $request->session()->get('user') ." and ". $nowDay ."=". $dayNow ."";
+            $respon = \DB::select(\DB::raw($query));
 
-        $data['siswa'] = $respon;
-        
-        // dd($data);
+            $data['siswa'] = $respon;
+
         }
-        else
-        // $data['siswa'] = array();
+
         $data['count'] = 1;
         $data['guru'] = Guru::where('id',$request->session()->get('user'))->first();
 
@@ -58,10 +56,15 @@ class GuruController extends Controller
 
     public function absensiSiswa(Request $request)
     {
+
         $data['guru'] = Guru::where('id',$request->session()->get('user'))->first();
         $data['siswa'] = Siswa::where('id_guru',$request->session()->get('user'))->get();
-
         $data['count'] = 0;
+        if($data['guru']->updated_at->format('d') == Carbon::now('Asia/Jakarta')->format('d'))
+        $data['status'] = 1;
+        else 
+        $data['status'] = 0;
+        // dd($data['status']);
     	return view('guru.absensi', $data);
     }
 
@@ -102,15 +105,19 @@ class GuruController extends Controller
     }
     public function inputAbsen(Request $request)
     {
+        
         $data = $request->input();
         foreach($data['siswa'] as $key => $value)
         {
             $absen = new Absensi;
             $absen->id_siswa = $data['siswa'][$key];
             $absen->kehadiran = $data['kehadiran'][$key];
-            $absen->created_at = Carbon::now();
+            $absen->created_at = Carbon::now('Asia/Jakarta');
             $absen->save();
         }
+        $guru = Guru::find($request->session()->get('user'));
+        $guru->updated_at = Carbon::now('Asia/Jakarta');
+        $guru->save();
         return redirect('/guru/daftar_siswa');
     }
 
@@ -121,7 +128,7 @@ class GuruController extends Controller
                 'id_siswa' => $data['contact2-subject'],
                 'judul' => $data['judul_kejadian'],
                 'detail' => $data['detail_kejadian'],
-                'waktu' => Carbon::now(),
+                'waktu' => Carbon::now('Asia/Jakarta'),
             ]);
         $data['guru'] = Guru::where('id',$request->session()->get('user'))->first();
         return view('guru.daftar_laporan', $data);

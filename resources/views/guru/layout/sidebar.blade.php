@@ -1,5 +1,4 @@
 <nav id="sidebar">
-{{date_default_timezone_set('Asia/Jakarta')}}
                 <!-- Sidebar Scroll Container -->
                 <div id="sidebar-scroll ">
                     <!-- Sidebar Content -->

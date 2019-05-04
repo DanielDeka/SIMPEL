@@ -50,10 +50,11 @@
                                                 <th class="d-none d-sm-table-cell" style="width: 15%;">Absensi</th>
                                             </tr>
                                         </thead>
+                                        @if($status == 0)
                                         <form method="POST" action="{{url('guru/post_absen')}}">
                                         @csrf
-                                        @foreach($siswa as $siswa)
                                         <tbody>
+                                        @foreach($siswa as $siswa)
                                             <tr>
                                                 <th class="text-center" scope="row">{{$count + 1}}</th>
                                                 <td>{{$siswa->nama}}</td>
@@ -66,8 +67,8 @@
                                                     <input class="form-control" type="text" hidden id="siswa[{{$count}}]" name="siswa[{{$count++}}]" value="{{ $siswa->id }}">
                                                 </td>
                                             </tr>
-                                        </tbody>
                                         @endforeach
+                                        </tbody>
                                         
                                         <input type="text" hidden id="ktl" value="besar">
                                     </table>
@@ -77,6 +78,18 @@
                                         </div>
                                     </div>
                                         </form>
+                                        @else
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center"></td>
+                                                <td class="font-w600 text-muted text-center">Anda telah melakukan Absensi</td>
+                                                <td class="font-size-sm">
+                                                    <span class="badge badge-danger"></span>
+                                                </td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                        @endif
                                 </div>
                             </div>
                         </div>

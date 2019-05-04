@@ -38,7 +38,7 @@
                     <div class="row gutters-tiny">
                         <!-- Latest Orders -->
                         <div class="col-xl">
-                            <h2 class="content-heading pt-0">Daftar Absensi Siswa {{$guru->siswa()->get()->kelas}}</h2>
+                            <h2 class="content-heading pt-0">Daftar Absensi Siswa {{$guru->siswa()->first()->kelas}}</h2>
                             <div class="block block-rounded">
                                 <div class="block-content">
                                     <table class="table table-borderless table-striped js-table-sections">
@@ -51,47 +51,36 @@
                                         </thead>
                                         @if($siswa != NULL)
 
-                                        @foreach($siswa as $siswa)
-                                        <tbody class="js-table-sections-header">
-                                            <tr>
-                                                <th class="text-center" scope="row">{{$count++}}</th>
-                                                <td>{{$siswa->nama}}</td>
-                                                <td class="d-none d-sm-table-cell">
-                                                    @if($siswa->kehadiran == 1)
-                                                    <span class="badge badge-success">Hadir</span>
-                                                    @elseif($siswa->kehadiran == 2)
-                                                    <span class="badge badge-danger">Tidak Hadir</span>
-                                                    @elseif($siswa->kehadiran == 3)
-                                                    <span class="badge badge-warning">Izin</span>
-                                                    @endif
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                        <tbody>
-                                            <!-- <tr>
-                                                <td class="text-center"></td>
-                                                <td class="font-w600 text-muted">Senin, 6 April 2019</td>
-                                                <td class="font-size-sm">
-                                                    <span class="badge badge-danger">Tanpa Izin</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center"></td>
-                                                <td class="font-w600 text-muted">Selasa, 7 April 2019</td>
-                                                <td class="font-size-sm">
-                                                    <span class="badge badge-success">Hadir</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center"></td>
-                                                <td class="font-w600 text-muted">Rabu, 8 April 2019</td>
-                                                <td class="font-size-sm">
-                                                    <span class="badge badge-success">Hadir</span>
-                                                </td>
-                                            </tr> -->
-                                        </tbody>
-                                        @endforeach
+                                            <tbody class="js-table-sections-header">
+                                            @foreach($siswa as $siswa)
+                                                <tr>
+                                                    <th class="text-center" scope="row">{{$count++}}</th>
+                                                    <td>{{$siswa->nama}}</td>
+                                                    <td class="d-none d-sm-table-cell">
+                                                        @if($siswa->kehadiran == 1)
+                                                        <span class="badge badge-success">Hadir</span>
+                                                        @elseif($siswa->kehadiran == 2)
+                                                        <span class="badge badge-danger">Tidak Hadir</span>
+                                                        @elseif($siswa->kehadiran == 3)
+                                                        <span class="badge badge-warning">Izin</span>
+                                                        @endif
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                            @endforeach
+                                        @else
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-center"></td>
+                                                    <td class="font-w600 text-muted text-center">Anda belum melakukan Absensi</td>
+                                                    <td class="font-size-sm">
+                                                        <span class="badge badge-danger"></span>
+                                                    </td>
+                                                </tr>
+                                                
+                                            </tbody>
                                         @endif
+
                                     </table>
                                 </div>
                             </div>
