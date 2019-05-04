@@ -14,6 +14,11 @@ class OrtuController extends Controller
         return view('ortu.dashboard');
     }
 
+    public function absensi()
+    {
+        return view('ortu.absensi');
+    }
+
     public function cekOrtu(Request $request)
     {
         $tabelOrtu = Ortu::where('email',$request->input('login-email'))->first();
@@ -23,10 +28,7 @@ class OrtuController extends Controller
             return redirect()->back();
         }
     }
-    public function absensi()
-    {
-        return view('ortu.absensi');
-    }
+
     public function laporan()
     {
         $data['laporans'] = Laporan::where('id_siswa', 21)->get();
@@ -37,6 +39,7 @@ class OrtuController extends Controller
        // dd($data['laporans']);
         return view('ortu.laporan', $data);
     }
+
     public function raport()
     {
         return view('ortu.raport');

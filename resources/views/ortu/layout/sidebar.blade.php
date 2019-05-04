@@ -20,6 +20,7 @@
                                 <!-- Logo -->
                                 <div class="content-header-item">
                                     <a class="link-effect font-w700 mr-5" href="index.html">
+
                                         <span class="font-size-xl text-primary">SIMPEL</span>
                                     </a>
                                 </div>
