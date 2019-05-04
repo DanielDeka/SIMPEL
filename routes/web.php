@@ -29,6 +29,7 @@ Route::group(['prefix' => 'guru'], function(){
 	Route::get('/absensi', 'GuruController@absensiSiswa');
 	Route::get('/form_laporan', 'GuruController@formLaporan');
 	Route::get('/daftar_laporan', 'GuruController@daftarLaporan');
+	Route::get('/form_nilai', 'GuruController@formNilai');
 });
 
 Route::get('/test', 'TestController@getAllOrtu');

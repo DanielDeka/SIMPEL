@@ -129,7 +129,7 @@
                                 <i class="fa fa-close"></i>
                             </button>
                         </div>
-                        <div class="modal-body" style="">
+                        <div class="modal-body">
                             <div>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
                                     <a href="{{url('login_guru')}}" style="color: #FAFAFA;">Sebagai Guru</a>
