@@ -60,7 +60,7 @@
                                             </tr>
                                         </tbody>
                                         <tbody>
-                                            <tr>
+                                            <!-- <tr>
                                                 <td class="text-center"></td>
                                                 <td class="font-w600 text-muted">Senin, 6 April 2019</td>
                                                 <td class="font-size-sm">
@@ -80,7 +80,7 @@
                                                 <td class="font-size-sm">
                                                     <span class="badge badge-success">Hadir</span>
                                                 </td>
-                                            </tr>
+                                            </tr> -->
                                         </tbody>
                                         @endforeach
                                     </table>
