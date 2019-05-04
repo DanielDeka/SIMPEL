@@ -54,13 +54,13 @@
                         <div class="content-side content-side-full">
                             <ul class="nav-main">
                                 <li>
-                                    <a class="nav-menu" data-toggle="nav-menu" href="#"><i class="si si-calendar"></i>Absensi</span></a>
+                                    <a href="{{url('ortu/absensi')}}"><i class="si si-calendar"></i><span class="sidebar-mini-hide">Absensi</span></a>
                                 </li>
                                 <li>
-                                    <a class="nav-menu" data-toggle="nav-menu" href="#"><i class="si si-notebook"></i>Laporan</span></a>
+                                    <a href="{{url('ortu/laporan')}}"><i class="si si-notebook"></i><span class="sidebar-mini-hide">Laporan</span></a>
                                 </li>
                                 <li>
-                                    <a class="nav-menu" data-toggle="nav-menu" href="#"><i class="si si-graduation"></i>Raport</span></a>
+                                    <a href="{{url('ortu/raport')}}"><i class="si si-graduation"></i><span class="sidebar-mini-hide">Raport</span></a>
                                 </li>
                             </ul>
                         </div>

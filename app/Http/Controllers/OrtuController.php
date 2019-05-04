@@ -10,4 +10,16 @@ class OrtuController extends Controller
     {
     	return view('ortu.dashboard');
     }
+    public function absensi()
+    {
+        return view('ortu.absensi');
+    }
+    public function laporan()
+    {
+        return view('ortu.laporan');
+    }
+    public function raport()
+    {
+        return view('ortu.raport');
+    }
 }
