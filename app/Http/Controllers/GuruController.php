@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Guru;
 use App\Siswa;
 use App\Absensi;
+use App\Laporan;
+use App\Komentar;
 use Carbon\Carbon;
 
 class GuruController extends Controller
@@ -38,6 +40,7 @@ class GuruController extends Controller
     {
         $data['guru'] = Guru::where('id',$request->session()->get('user'))->first();
         $data['siswa'] = Siswa::where('id_guru',$request->session()->get('user'))->get();
+
         $data['count'] = 0;
     	return view('guru.absensi', $data);
     }
@@ -45,12 +48,19 @@ class GuruController extends Controller
     public function formLaporan(Request $request)
     {
         $data['guru'] = Guru::where('id',$request->session()->get('user'))->first();
+        $data['siswas'] = Siswa::where('id_guru',$request->session()->get('user'))->get();
+        foreach ($data['siswas'] as $siswa) {
+            $data['siswas'] = Siswa::where('id_guru',$request->session()->get('user'))->get();
+        }
+        // dd($data['siswas']);
     	return view('guru.form_laporan', $data);
     }
 
     public function daftarLaporan(Request $request)
     {
         $data['guru'] = Guru::where('id',$request->session()->get('user'))->first();
+        $data['siswas'] = Siswa::where('id_guru',$request->session()->get('user'))->get();
+        //dd($data['siswas']);
     	return view('guru.daftar_laporan', $data);
     }
 
@@ -82,5 +92,26 @@ class GuruController extends Controller
         }
         // dd($absen);
         return redirect('/guru/daftar_siswa');
+    }
+
+    public function createLaporan(Request $request)
+    {
+        $data = $request->input();
+        $create = Laporan::create([
+                'id_siswa' => $data['contact2-subject'],
+                'judul' => $data['judul_kejadian'],
+                'detail' => $data['detail_kejadian'],
+                'waktu' => Carbon::now(),
+            ]);
+        $data['guru'] = Guru::where('id',$request->session()->get('user'))->first();
+        return view('guru.daftar_laporan', $data);
+    }
+
+    public function comment($id)
+    {
+        $data['komentars'] = Komentar::where('id_laporan', $id)->get();
+        $data['laporan'] = Laporan::where('id', $id)->first();
+        //dd($data['komentars']);
+        return view('guru.komentar_laporan', $data);
     }
 }

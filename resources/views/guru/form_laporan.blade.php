@@ -44,11 +44,12 @@
                             </div>
                         </div>
                         <div class="block-content">
-                            <form action="be_forms_premade.html" method="post" onsubmit="return false;">
+                            <form action="{{url('guru/laporan')}}" method="post">
+                                @csrf
                                 <div class="form-group row">
                                     <div class="col-12">
                                         <div class="form-material floating">
-                                            <input type="text" class="form-control" id="input1" name="input1">
+                                            <input type="text" class="form-control" id="judul_kejadian" name="judul_kejadian">
                                             <label for="register3-username">Nama Kejadian / Laporan</label>
                                         </div>
                                     </div>
@@ -56,10 +57,10 @@
                                 <div class="form-group row">
                                     <div class="col-12">
                                         <div class="form-material floating">
-                                            <select class="form-control" id="contact2-subject" name="contact2-subject" size="1">
-                                                <option value="1" selected>Alam Cahya Kumolo</option>
-                                                <option value="2">Abyan "myans" Dafa</option>
-                                                <option value="3">Fandy "Jinusean" Mohammad</option>
+                                            <select class="form-control" id="id_siswa" name="contact2-subject" size="1">
+                                                @foreach($siswas as $siswa)
+                                                <option value="{{$siswa->id}}">{{$siswa->nama}}</option>    
+                                                @endforeach
                                             </select>
                                             <label for="contact2-subject">Nama Siswa</label>
                                         </div>
@@ -68,7 +69,7 @@
                                 <div class="form-group row">
                                     <div class="col-12">
                                         <div class="form-material floating">
-                                            <input type="text" class="form-control" id="input2" name="input2">
+                                            <input type="text" class="form-control" id="waktu_kejadian" name="waktu_kejadian">
                                             <label for="register3-username">Waktu Kejadian</label>
                                         </div>
                                     </div>
@@ -76,7 +77,7 @@
                                 <div class="form-group row">
                                     <div class="col-12">
                                         <div class="form-material floating">
-                                            <textarea class="form-control" id="contact3-msg" name="contact3-msg" rows="7"></textarea>
+                                            <textarea class="form-control" id="detail_kejadian" name="detail_kejadian" rows="7"></textarea>
                                             <label for="contact3-msg">Detail Kejadian</label>
                                         </div>
                                         <div class="form-text text-muted text-right">Jelaskan dengan detail kejadian yang terjadi agar orangtua paham dengan maksud anda.</div>
