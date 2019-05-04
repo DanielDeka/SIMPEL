@@ -34,4 +34,5 @@ Route::group(['prefix' => 'guru'], function(){
 });
 
 Route::get('/test', 'TestController@getAllOrtu');
+Route::get('/test2', 'TestController@getAllOrtu2');
 

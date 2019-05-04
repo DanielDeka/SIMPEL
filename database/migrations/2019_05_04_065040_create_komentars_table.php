@@ -17,6 +17,7 @@ class CreateKomentarsTable extends Migration
             $table->bigIncrements('id');
             $table->string('isi',255);
             $table->bigInteger('id_laporan')->unsigned()->nullable();
+            $table->integer('tipe');
             $table->timestamps();
         });
 

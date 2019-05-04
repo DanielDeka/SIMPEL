@@ -183,15 +183,58 @@ class TestController extends Controller
         return "Success";
     }
     public function createDummyLaporan(){
-        
+        for ($x = 21; $x <= 30; $x++) {
+            $create = Laporan::create([
+                'id_siswa' => $x,
+                'judul' => 'anak anda berkelahi',
+                'detail' => 'berkelahi dengan temannya',
+                'waktu' => '2019-04-05 08:00:00',
+            ]);
+            $x++;
+            $create = Laporan::create([
+                'id_siswa' => $x,
+                'judul' => 'anak anda suka menabung',
+                'detail' => 'suka sedekah',
+                'waktu' => '2019-05-05 08:00:00',
+            ]);
+            $x++;
+            $create = Laporan::create([
+                'id_siswa' => $x,
+                'judul' => 'anak anda nilainya bagus',
+                'detail' => 'nilainya lebih dari 90',
+                'waktu' => '2019-05-05 09:00:00',
+            ]);
+        } 
+        return "Success";
     }
     public function createDummyKomentar(){
-
+        for ($x = 1; $x <= 12; $x++) {
+            $create = Komentar::create([
+                'isi' => 'terima kasih atas laporannya',
+                'id_laporan' => $x,
+                'tipe' => 2
+            ]);
+            $x++;
+            $create = Komentar::create([
+                'isi' => 'saya mau protes',
+                'id_laporan' => $x,
+                'tipe' => 2
+            ]);
+        } 
+        return "Success";
     }
 
 
-    public function getAllOrtu(){
-        return Ortu::All();
+    public function getAllOrtu(Request $request){
+        $request->session()->put('key', 'username');
+        return "success";
+    }
+    
+    public function getAllOrtu2(Request $request){
+        if($request->session()->get('key') == null)
+            return "null bego";
+        else
+            return "berhasil yeay";
     }
 
 
