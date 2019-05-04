@@ -37,5 +37,8 @@ Route::group(['prefix' => 'guru'], function(){
 	Route::get('/form_nilai', 'GuruController@formNilai');
 });
 
+Route::get('ortu', 'OrtuController@index');
+
 Route::get('/test', 'TestController@getAllOrtu');
+Route::get('/test2', 'TestController@getAllOrtu2');
 

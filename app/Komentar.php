@@ -9,7 +9,7 @@ class Komentar extends Model
     //
 
     protected $table = 'komentars';
-    protected $fillable = ['isi', 'id_laporan'];
+    protected $fillable = ['isi', 'id_laporan','tipe'];
     protected $primaryKey = 'id';
 
 
