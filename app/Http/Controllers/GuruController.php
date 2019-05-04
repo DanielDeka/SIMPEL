@@ -30,4 +30,9 @@ class GuruController extends Controller
     {
     	return view('guru.daftar_laporan');
     }
+
+    public function formNilai()
+    {
+    	return view('guru.form_nilai');
+    }
 }

@@ -19,12 +19,17 @@ class CreateNilaisTable extends Migration
             $table->integer('nilai');
             $table->string('tipe',100);
             $table->bigInteger('id_pelajaran')->unsigned()->nullable();
+            $table->bigInteger('id_rapor')->unsigned()->nullable();
             $table->timestamps();
         });
 
         Schema::table('nilais', function (Blueprint $table) {
             $table->foreign('id_pelajaran')
             ->references('id')->on('pelajarans')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+            $table->foreign('id_rapor')
+            ->references('id')->on('rapors')
             ->onUpdate('cascade')
             ->onDelete('cascade');
         });
@@ -39,5 +44,6 @@ class CreateNilaisTable extends Migration
     {
         Schema::dropIfExists('nilais');
         Schema::dropForeign(['id_pelajaran']);
+        Schema::dropForeign(['id_rapor']);
     }
 }
