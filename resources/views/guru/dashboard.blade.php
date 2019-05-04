@@ -35,7 +35,7 @@
                     <div class="bg-black-op-75">
                         <div class="content content-top content-full text-center">
                             <div class="py-20">
-                                <h1 class="h2 font-w700 text-white mb-10">Kelas 3 A</h1>
+                                <h1 class="h2 font-w700 text-white mb-10">Kelas {{$guru->siswa()->first()->kelas}}</h1>
                                 <h2 class="h4 font-w400 text-white-op mb-0">Selamat datang, <a class="text-primary-light link-effect" href="be_pages_ecom_orders.html">{{$guru->nama}}</a>!</h2>
                             </div>
                         </div>

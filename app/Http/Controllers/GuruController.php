@@ -34,10 +34,10 @@ class GuruController extends Controller
         $data['siswa'] = null;
         if($harinya != null)
         {
-            $nowDay = substr($harinya->created_at, 8, 2);
-           
-
-            $dayNow = date("d");
+            $nowDay = $harinya->created_at->format('d');
+            
+            $dayNow = date('d');
+            // dd($dayNow);
 
             $query = "SELECT a.id, a.nama, a.kelas, b.kehadiran, b.keterangan
                         FROM siswas a, absensis b 

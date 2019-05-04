@@ -1,4 +1,7 @@
 <nav id="sidebar">
+@php
+date_default_timezone_set('Asia/Jakarta')
+@endphp
                 <!-- Sidebar Scroll Container -->
                 <div id="sidebar-scroll ">
                     <!-- Sidebar Content -->
