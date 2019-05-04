@@ -52,14 +52,15 @@
                                         @foreach($siswa as $siswa)
                                         <tbody>
                                             <tr>
-                                                <th class="text-center" scope="row">{{$count}}</th>
+                                                <th class="text-center" scope="row">{{$count + 1}}</th>
                                                 <td>{{$siswa->nama}}</td>
-                                                <td class="d-none d-sm-table-cell" id="kehadiran[{{($count++) -1}}]">
+                                                <td class="d-none d-sm-table-cell" id="kehadiran[{{$count}}]">
                                                     <select class="form-control">
                                                         <option value="1" selected>Hadir</option>
                                                         <option value="2">Tanpa Izin</option>
                                                         <option value="3">Izin</option>
                                                     </select>
+                                                    <input type="text" hidden id="siswa[{{$count++}}]" value="{{ $siswa->id }}">
                                                 </td>
                                             </tr>
                                         </tbody>

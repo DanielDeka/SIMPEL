@@ -26,7 +26,7 @@ class GuruController extends Controller
     {
         $data['guru'] = Guru::where('id',$request->session()->get('user'))->first();
         $data['siswa'] = Siswa::where('id_guru',$request->session()->get('user'))->get();
-        $data['count'] = 1;
+        $data['count'] = 0;
     	return view('guru.absensi', $data);
     }
 
