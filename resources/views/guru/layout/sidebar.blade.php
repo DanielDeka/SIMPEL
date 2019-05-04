@@ -79,7 +79,7 @@
                                     <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-graduation"></i><span class="sidebar-mini-hide">Raport</span></a>
                                     <ul>
                                         <li>
-                                            <a href="#">Input Nilai</a>
+                                            <a href="{{url('guru/form_nilai')}}">Input Nilai</a>
                                         </li>
                                         <li>
                                             <a href="#">Data Nilai Siswa</a>
