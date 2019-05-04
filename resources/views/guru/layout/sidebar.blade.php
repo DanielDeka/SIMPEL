@@ -39,7 +39,7 @@
                                 </a>
                                 <ul class="list-inline mt-10">
                                     <li class="list-inline-item">
-                                        <a class="link-effect text-dual-primary-dark font-size-xs font-w600 text-uppercase" href="be_pages_generic_profile.html">Cikgu Alam</a>
+                                        <a class="link-effect text-dual-primary-dark font-size-xs font-w600 text-uppercase" href="be_pages_generic_profile.html">{{$guru->nama}}</a>
                                     </li>
                                     <li>
                                         <span class="text-dual-primary-dark font-size-s font-w600 text-uppercase">Senin, 1 April 2019</span>

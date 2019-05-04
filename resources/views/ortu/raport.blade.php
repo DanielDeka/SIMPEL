@@ -25,24 +25,68 @@
                         </nav>
                     </div>
                 </div>
-                <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-primary dropdown-toggle" id="btnGroupVerticalDrop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mata Pelajaran</button>
-                    <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop1">
-                        <a class="dropdown-item" href="javascript:void(0)">
-                            <i class="fa fa-fw fa-bell mr-5"></i>News
-                        </a>
-                        <a class="dropdown-item" href="javascript:void(0)">
-                            <i class="fa fa-fw fa-envelope-o mr-5"></i>Messages
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="javascript:void(0)">
-                            <i class="fa fa-fw fa-pencil mr-5"></i>Edit Profile
-                        </a>
-                    </div>
-                </div>
-
                 <!-- END Breadcrumb -->
 
+                <div class="row" style="padding: 2%;">
+                    <div class="col-sm-4">
+                        <div>
+                            <a class="block bg-danger text-center" style="height:100%;" href="javascript:void(0)">
+                                <div class="block-content block-content-full">
+                                    <img class="img-avatar img-avatar-thumb" src="assets/img/avatars/avatar9.jpg" alt="">
+                                </div>
+                                <div class="block-content block-content-full bg-black-op-5">
+                                    <div class="font-w600 text-white mb-5">Cahya Kumolo</div>
+                                    <div class="font-size-sm text-white-op">Kelas 3A</div>
+                                </div>
+                                <div class="block-content block-content-full block-content-sm">
+                                    <span class="font-w600 font-size-sm text-danger-light">Nomor Absen : 001</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-primary dropdown-toggle" id="btnGroupVerticalDrop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mata Pelajaran</button>
+                            <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop1">
+                                @foreach ($pelajaran as $pelajaran)
+                                <a class="dropdown-item" href="javascript:void(0)">
+                                    <i class="fa fa-fw fa-book mr-5"></i>{{$pelajaran->nama}}
+                                </a>
+                                @endforeach
+                            </div>
+                        </div>
+                                        <!-- Hover Table -->
+                        <div class="block" style="height:100%">
+                            <div class="block-header block-header-default">
+                                <h3 class="block-title">Tabel Nilai</h3>
+                            </div>
+                            <div class="block-content">
+                                <table class="table table-hover table-vcenter">
+                                    <thead>
+                                        <tr>
+                                            <!-- <th class="text-center" style="width: 50px;">#</th> -->
+                                            <th>Tugas</th>
+                                            <th  style="width: 15%;">Nilai</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($nilai as $nilai)
+                                        <tr>
+                                            <!-- <th class="text-center" scope="row">1</th> -->
+                                            <td>{{$nilai->nama}}</td>
+                                            <td class="d-none d-sm-table-cell">
+                                                <span class="badge badge-primary">{{$nilai->nilai}}</span>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- END Hover Table -->
+                    </div>
+                </div>
+                
                 <!-- Page Content -->
                 
                 <!-- END Page Content -->

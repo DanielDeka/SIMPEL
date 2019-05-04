@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Ortu;
-use App\Laporan;
 use App\Siswa;
 use App\Komentar;
+use App\Nilai;
+use App\Pelajaran;
 
 class OrtuController extends Controller
 {
@@ -43,7 +44,9 @@ class OrtuController extends Controller
 
     public function raport()
     {
-        return view('ortu.raport');
+        $nilai = Nilai::where('id_rapor',1)->get();
+        $pelajaran = Pelajaran::all();
+        return view('ortu.raport', compact('nilai','pelajaran'));
     }
 
     public function comment($id)
