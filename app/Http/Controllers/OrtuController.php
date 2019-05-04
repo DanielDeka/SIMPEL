@@ -21,4 +21,9 @@ class OrtuController extends Controller
             return redirect()->back();
         }
     }
+
+    public function raport()
+    {
+        return view('ortu.raport');
+    }
 }

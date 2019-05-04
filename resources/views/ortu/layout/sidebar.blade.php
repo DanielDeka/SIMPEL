@@ -20,6 +20,7 @@
                                 <!-- Logo -->
                                 <div class="content-header-item">
                                     <a class="link-effect font-w700 mr-5" href="index.html">
+
                                         <span class="font-size-xl text-primary">SIMPEL</span>
                                     </a>
                                 </div>
@@ -60,7 +61,7 @@
                                     <a class="nav-menu" data-toggle="nav-menu" href="#"><i class="si si-notebook"></i>Laporan</span></a>
                                 </li>
                                 <li>
-                                    <a class="nav-menu" data-toggle="nav-menu" href="#"><i class="si si-graduation"></i>Raport</span></a>
+                                    <a class="nav-menu" data-toggle="nav-menu" href="/ortu/raport"><i class="si si-graduation"></i>Raport</span></a>
                                 </li>
                             </ul>
                         </div>

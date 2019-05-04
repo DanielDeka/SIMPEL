@@ -14,13 +14,7 @@
                 <div class="content-header">
                     <!-- Left Section -->
                     <div class="content-header-section">
-                        <!-- Logo -->
-                        <div class="content-header-item">
-                            <a class="link-effect font-w700 mr-5" href="index.html">
-                                <span class="font-size-xl text-primary">SIMPEL</span>
-                            </a>
-                        </div>
-                        <!-- END Logo -->
+                        <img class="img-fluid" src="{{asset('assets/codebase/assets/img/logos/logo.png')}}">
                     </div>
                     <!-- END Left Section -->
 
