@@ -16,8 +16,8 @@
                     <div class="content-header-section">
                         <!-- Logo -->
                         <div class="content-header-item">
-                            <a class="font-w700 mr-5" href="index.html">
-                                <span class="font-size-xl text-danger">SIMPEL</span>
+                            <a class="link-effect font-w700 mr-5" href="index.html">
+                                <span class="font-size-xl text-primary">SIMPEL</span>
                             </a>
                         </div>
                         <!-- END Logo -->
@@ -38,7 +38,7 @@
                         </div>
                         <!-- END Color Themes + A few of the many header options -->
                         <a class="font-w700 mr-5" href="index.html">
-                            <span class="font-size-xl text-danger">Masuk</span>
+                            <span class="font-size-xl text-primary">Masuk</span>
                         </a>
                         <!-- END Toggle Sidebar -->
                     </div>
@@ -93,7 +93,7 @@
                             <div>
                                 <div class="block-content">
                                     <p class="text-right py-100">
-                                        <span class="font-w700 mr-5 font-size-h2 text-danger">SIMPEL</span>
+                                        <span class="font-w700 mr-5 font-size-h1 text-primary">SIMPEL</span>
                                         <br>
                                         <span class="font-w700 mr-5 font-size-xl text">Sistem Informasi Monitoring Pelajar</span>
                                         <br>
@@ -129,15 +129,15 @@
                                 <i class="fa fa-close"></i>
                             </button>
                         </div>
-                        <div class="modal-body" style="">
+                        <div class="modal-body">
                             <div>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
-                                    <a href="index.html" style="color: #FAFAFA;">Sebagai Guru</a>
+                                    <a href="{{url('login_guru')}}" style="color: #FAFAFA;">Sebagai Guru</a>
                                 </button>
                             </div>
                             <div>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
-                                    <a href="index.html" style="color: #FAFAFA;">Sebagai Orangtua</a>
+                                    <a href="{{url('login_ortu')}}" style="color: #FAFAFA;">Sebagai Orangtua</a>
                                 </button>
                             </div>
                         </div>
