@@ -1,4 +1,5 @@
 <nav id="sidebar">
+{{date_default_timezone_set('Asia/Jakarta')}}
                 <!-- Sidebar Scroll Container -->
                 <div id="sidebar-scroll ">
                     <!-- Sidebar Content -->
@@ -42,7 +43,7 @@
                                         <a class="link-effect text-dual-primary-dark font-size-xs font-w600 text-uppercase" href="be_pages_generic_profile.html">{{$guru->nama}}</a>
                                     </li>
                                     <li>
-                                        <span class="text-dual-primary-dark font-size-s font-w600 text-uppercase">Senin, 1 April 2019</span>
+                                        <span class="text-dual-primary-dark font-size-s font-w600 text-uppercase">{{date("l, d - M - Y")}}</span>
                                     </li>
                                 </ul>
                             </div>

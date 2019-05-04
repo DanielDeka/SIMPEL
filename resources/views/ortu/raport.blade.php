@@ -35,28 +35,27 @@
                                     <img class="img-avatar img-avatar-thumb" src="assets/img/avatars/avatar9.jpg" alt="">
                                 </div>
                                 <div class="block-content block-content-full bg-black-op-5">
-                                    <div class="font-w600 text-white mb-5">Cahya Kumolo</div>
-                                    <div class="font-size-sm text-white-op">Kelas 3A</div>
-                                </div>
-                                <div class="block-content block-content-full block-content-sm">
-                                    <span class="font-w600 font-size-sm text-danger-light">Nomor Absen : 001</span>
+                                    @foreach($siswa as $siswa)
+                                    <div class="font-w600 text-white mb-5">{{$siswa->nama}}</div>
+                                    <div class="font-size-sm text-white-op">{{$siswa->kelas}}</div>
+                                    @endforeach
                                 </div>
                             </a>
                         </div>
                     </div>
                     <div class="col-sm-8">
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-primary dropdown-toggle" id="btnGroupVerticalDrop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mata Pelajaran</button>
-                            <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop1">
-                                @foreach ($pelajaran as $pelajaran)
-                                <a class="dropdown-item" href="javascript:void(0)">
-                                    <i class="fa fa-fw fa-book mr-5"></i>{{$pelajaran->nama}}
-                                </a>
-                                @endforeach
-                            </div>
+                            <!-- <button type="button" class="btn btn-primary dropdown-toggle" id="btnGroupVerticalDrop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mata Pelajaran</button> -->
+                            <form id="select" action="{{url('/ortu/raport')}}">
+                                <select class="form-control" id="select2" name="select2">
+                                    @foreach ($pelajaran as $pelajaran)
+                                    <option value="{{$pelajaran->id}}"><i class="fa fa-fw fa-book mr-5"></i>{{$pelajaran->nama}}</option>
+                                    @endforeach
+                                </select>
+                            </form>
                         </div>
                                         <!-- Hover Table -->
-                        <div class="block" style="height:100%">
+                        <div class="block mt-5" style="height:100%">
                             <div class="block-header block-header-default">
                                 <h3 class="block-title">Tabel Nilai</h3>
                             </div>
@@ -99,6 +98,12 @@
         </div>
         <!-- END Page Container -->
         {{-- <script src="assets/js/pages/be_pages_ecom_dashboard.js"></script> --}}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script>
+        $('select').on('change', function() {
+            $('#select').submit();
+        });
+</script>
     </body>
 </html>
 

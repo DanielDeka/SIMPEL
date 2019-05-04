@@ -49,28 +49,33 @@
                                                 <th class="d-none d-sm-table-cell" style="width: 15%;">Absensi</th>
                                             </tr>
                                         </thead>
+                                        <form method="POST" action="{{url('guru/post_absen')}}">
+                                        @csrf
                                         @foreach($siswa as $siswa)
                                         <tbody>
                                             <tr>
                                                 <th class="text-center" scope="row">{{$count + 1}}</th>
                                                 <td>{{$siswa->nama}}</td>
-                                                <td class="d-none d-sm-table-cell" id="kehadiran[{{$count}}]">
-                                                    <select class="form-control">
+                                                <td class="d-none d-sm-table-cell" >
+                                                    <select class="form-control" id="kehadiran[{{$count}}]" name="kehadiran[{{$count}}]">
                                                         <option value="1" selected>Hadir</option>
                                                         <option value="2">Tanpa Izin</option>
                                                         <option value="3">Izin</option>
                                                     </select>
-                                                    <input type="text" hidden id="siswa[{{$count++}}]" value="{{ $siswa->id }}">
+                                                    <input class="form-control" type="text" hidden id="siswa[{{$count}}]" name="siswa[{{$count++}}]" value="{{ $siswa->id }}">
                                                 </td>
                                             </tr>
                                         </tbody>
                                         @endforeach
+                                        
+                                        <input type="text" hidden id="ktl" value="besar">
                                     </table>
                                     <div class="form-group row">
                                         <div class="col-md-9 pull-right">
                                             <button type="submit" class="btn btn-alt-primary">Submit</button>
                                         </div>
                                     </div>
+                                        </form>
                                 </div>
                             </div>
                         </div>

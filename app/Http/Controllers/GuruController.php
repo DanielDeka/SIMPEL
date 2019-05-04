@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Guru;
 use App\Siswa;
+use App\Absensi;
+use Carbon\Carbon;
 
 class GuruController extends Controller
 {
@@ -19,6 +21,16 @@ class GuruController extends Controller
         $data['guru'] = Guru::where('id',$request->session()->get('user'))->first();
         $data['siswa'] = Siswa::where('id_guru',$request->session()->get('user'))->get();
         $data['count'] = 1;
+
+
+        // $query = "SELECT a.id, a.nama, a.kelas, b.kehadiran, b.keterangan
+        //             FROM siswas a, absensis b 
+        //             WHERE a.id = b.id_siswa and a.id_guru=". $request->session()->get('user') ."";
+        // $respon = \DB::select(\DB::raw($query));
+        // dd($respon)
+        // $data['siswa'] = Siswa::where('id_guru',$request->session()->get('user'))->get();
+
+
     	return view('guru.daftar_siswa', $data);
     }
 
@@ -57,5 +69,18 @@ class GuruController extends Controller
         }else{
             return redirect()->back();
         }
+    }
+    public function inputAbsen(Request $request)
+    {
+        $data = $request->input();
+        foreach($data['siswa'] as $key => $value)
+        {
+            $absen = new Absensi;
+            $absen->id_siswa = $data['siswa'][$key];
+            $absen->kehadiran = $data['kehadiran'][$key];
+            $absen->save();
+        }
+        // dd($absen);
+        return redirect('/guru/daftar_siswa');
     }
 }

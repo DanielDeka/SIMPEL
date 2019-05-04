@@ -26,6 +26,8 @@ Route::get('/login_ortu', function () {
     return view('login_ortu');
 });
 
+Route::post('/post_ortu', 'OrtuController@cekOrtu');
+
 Route::group(['prefix' => 'guru', 'middleware' => 'sessionkw'], function(){
     Route::get('', 'GuruController@index');
     Route::get('/daftar_siswa', 'GuruController@daftarSiswa');
@@ -33,6 +35,7 @@ Route::group(['prefix' => 'guru', 'middleware' => 'sessionkw'], function(){
     Route::get('/form_laporan', 'GuruController@formLaporan');
     Route::get('/daftar_laporan', 'GuruController@daftarLaporan');
     Route::get('/form_nilai', 'GuruController@formNilai');
+    Route::post('/post_absen', 'GuruController@inputAbsen');
 });
 
 Route::group(['prefix' => 'ortu', 'middleware' => 'sessionkw'], function(){
@@ -43,6 +46,6 @@ Route::group(['prefix' => 'ortu', 'middleware' => 'sessionkw'], function(){
 	Route::get('/laporan/{id}', 'OrtuController@comment');
 });
 
-Route::post('/post_ortu', 'OrtuController@cekOrtu');
+
 
 
