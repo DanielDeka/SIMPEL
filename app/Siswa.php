@@ -15,23 +15,23 @@ class Siswa extends Model
 
     public function guru()
     {
-        return $this->belongsTo('App\Guru');
+        return $this->belongsTo('App\Guru', 'id_guru');
     }
     public function ortu()
     {
-        return $this->belongsTo('App\Ortu');
+        return $this->belongsTo('App\Ortu', 'id_ortu');
     }
     public function rapor()
     {
-        return $this->belongsTo('App\Rapor');
+        return $this->hasMany('App\Rapor', 'id_rapor');
     }
     public function absensi()
     {
-        return $this->hasMany('App\Absensi');
+        return $this->hasMany('App\Absensi', 'id_siswa');
     }
     public function laporan()
     {
-        return $this->hasMany('App\Laporan');
+        return $this->hasMany('App\Laporan', 'id_siswa');
     }
 
 }

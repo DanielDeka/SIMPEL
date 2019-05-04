@@ -33,6 +33,8 @@ Route::group(['prefix' => 'guru', 'middleware' => 'sessionkw'], function(){
     Route::get('/daftar_siswa', 'GuruController@daftarSiswa');
     Route::get('/absensi', 'GuruController@absensiSiswa');
     Route::get('/form_laporan', 'GuruController@formLaporan');
+    Route::post('/laporan', 'GuruController@createLaporan');
+    Route::get('/laporan/{id}', 'GuruController@comment');
     Route::get('/daftar_laporan', 'GuruController@daftarLaporan');
     Route::get('/form_nilai', 'GuruController@formNilai');
     Route::post('/post_absen', 'GuruController@inputAbsen');

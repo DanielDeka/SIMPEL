@@ -15,6 +15,6 @@ class Komentar extends Model
 
     public function laporan()
     {
-        return $this->belongsTo('App\Laporan');
+        return $this->belongsTo('App\Laporan', 'id_laporan');
     }
 }

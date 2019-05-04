@@ -14,11 +14,11 @@ class Rapor extends Model
 
     public function nilai()
     {
-        return $this->hasMany('App\Nilai');
+        return $this->hasMany('App\Nilai', 'id_rapor');
     }
 
     public function siswa()
     {
-        return $this->belongsTo('App\Siswa');
+        return $this->belongsTo('App\Siswa', 'id_siswa');
     }
 }

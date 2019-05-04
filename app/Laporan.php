@@ -14,11 +14,11 @@ class Laporan extends Model
 
     public function komentar()
     {
-        return $this->hasMany('App\Komentar');
+        return $this->hasMany('App\Komentar', 'id_laporan');
     }
 
     public function siswa()
     {
-        return $this->belongsTo('App\Siswa');
+        return $this->belongsTo('App\Siswa', 'id_siswa');
     }
 }

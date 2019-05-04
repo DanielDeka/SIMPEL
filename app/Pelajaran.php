@@ -14,6 +14,6 @@ class Pelajaran extends Model
 
     public function nilai()
     {
-        return $this->hasMany('App\Nilai');
+        return $this->hasMany('App\Nilai', 'id_pelajaran');
     }
 }
