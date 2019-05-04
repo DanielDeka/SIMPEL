@@ -24,7 +24,7 @@
                 <div class="bg-body-light border-b">
                     <div class="content py-5 text-center">
                         <nav class="breadcrumb bg-body-light mb-0">
-                            <a class="breadcrumb-item" href="be_pages_ecom_dashboard.html">Orangtua</a>
+                            <a class="breadcrumb-item" href="be_pages_ecom_dashboard.html">Orang Tua</a>
                             <span class="breadcrumb-item active">Kelas</span>
                             <span class="breadcrumb-item active">Absensi</span>
                         </nav>

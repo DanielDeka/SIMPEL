@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Ortu;
 use App\Laporan;
 use App\Siswa;
+use App\Komentar;
 
 class OrtuController extends Controller
 {
@@ -43,5 +44,13 @@ class OrtuController extends Controller
     public function raport()
     {
         return view('ortu.raport');
+    }
+
+    public function comment($id)
+    {
+        $data['komentars'] = Komentar::where('id_laporan', $id)->get();
+        $data['laporan'] = Laporan::where('id', $id)->first();
+        //dd($data['comment']);
+        return view('ortu.komentar_laporan', $data);
     }
 }
