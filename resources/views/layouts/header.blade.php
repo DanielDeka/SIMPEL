@@ -27,6 +27,7 @@
 
 <!-- Stylesheets -->
 <link rel="stylesheet" id="css-main" href="{{asset('assets/codebase/assets/css/codebase.min.css')}}">
+<link rel="stylesheet" id="css-theme" href="{{asset('assets/codebase/assets/css/themes/pulse.min.css')}}">
 <!-- END Stylesheets -->
 
 

@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix' => 'guru'], function(){
+	Route::get('', 'GuruController@index');
+	Route::get('/daftar_siswa', 'GuruController@daftarSiswa');
+});

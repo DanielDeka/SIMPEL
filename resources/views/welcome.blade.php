@@ -16,8 +16,8 @@
                     <div class="content-header-section">
                         <!-- Logo -->
                         <div class="content-header-item">
-                            <a class="font-w700 mr-5" href="index.html">
-                                <span class="font-size-xl text-danger">SIMPEL</span>
+                            <a class="link-effect font-w700 mr-5" href="index.html">
+                                <span class="font-size-xl text-primary">SIMPEL</span>
                             </a>
                         </div>
                         <!-- END Logo -->
@@ -38,7 +38,7 @@
                         </div>
                         <!-- END Color Themes + A few of the many header options -->
                         <a class="font-w700 mr-5" href="index.html">
-                            <span class="font-size-xl text-danger">Masuk</span>
+                            <span class="font-size-xl text-primary">Masuk</span>
                         </a>
                         <!-- END Toggle Sidebar -->
                     </div>
@@ -93,7 +93,7 @@
                             <div>
                                 <div class="block-content">
                                     <p class="text-right py-100">
-                                        <span class="font-w700 mr-5 font-size-h2 text-danger">SIMPEL</span>
+                                        <span class="font-w700 mr-5 font-size-h1 text-primary">SIMPEL</span>
                                         <br>
                                         <span class="font-w700 mr-5 font-size-xl text">Sistem Monitoring Pelajar</span>
                                         <br>
