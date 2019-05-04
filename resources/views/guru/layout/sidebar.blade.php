@@ -60,7 +60,7 @@
                                             <a href="{{url('guru/daftar_siswa')}}">Daftar Siswa</a>
                                         </li>
                                         <li>
-                                            <a href="#">Absensi</a>
+                                            <a href="{{url('guru/absensi')}}">Absensi</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -68,10 +68,10 @@
                                     <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-notebook"></i><span class="sidebar-mini-hide">Laporan</span></a>
                                     <ul>
                                         <li>
-                                            <a href="#">Buat Laporan</a>
+                                            <a href="{{url('guru/form_laporan')}}">Buat Laporan</a>
                                         </li>
                                         <li>
-                                            <a href="#">Daftar Laporan Siswa</a>
+                                            <a href="{{url('guru/daftar_laporan')}}">Daftar Laporan Siswa</a>
                                         </li>
                                     </ul>
                                 </li>

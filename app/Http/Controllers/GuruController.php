@@ -15,4 +15,19 @@ class GuruController extends Controller
     {
     	return view('guru.daftar_siswa');
     }
+
+    public function absensiSiswa()
+    {
+    	return view('guru.absensi');
+    }
+
+    public function formLaporan()
+    {
+    	return view('guru.form_laporan');
+    }
+
+    public function daftarLaporan()
+    {
+    	return view('guru.daftar_laporan');
+    }
 }

@@ -25,6 +25,7 @@
                     <div class="content py-5 text-center">
                         <nav class="breadcrumb bg-body-light mb-0">
                             <a class="breadcrumb-item" href="be_pages_ecom_dashboard.html">Guru</a>
+                            <span class="breadcrumb-item ">Kelas</span>
                             <span class="breadcrumb-item active">Daftar Siswa</span>
                         </nav>
                     </div>

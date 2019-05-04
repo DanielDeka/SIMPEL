@@ -18,6 +18,9 @@ Route::get('/', function () {
 Route::group(['prefix' => 'guru'], function(){
 	Route::get('', 'GuruController@index');
 	Route::get('/daftar_siswa', 'GuruController@daftarSiswa');
+	Route::get('/absensi', 'GuruController@absensiSiswa');
+	Route::get('/form_laporan', 'GuruController@formLaporan');
+	Route::get('/daftar_laporan', 'GuruController@daftarLaporan');
 });
 
 Route::get('/test', 'TestController@getAllOrtu');
