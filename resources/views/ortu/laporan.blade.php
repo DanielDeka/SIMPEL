@@ -60,90 +60,17 @@
                                     <!-- Checkable Table (.js-table-checkable class is initialized in Codebase() -> uiHelperTableToolsCheckable()) -->
                                     <table class="js-table-checkable table table-hover table-vcenter">
                                         <tbody>
+                                            @foreach($laporans as $laporan)
+
                                             <tr>
-                                                <td class="text-center" style="width: 40px;">
-                                                    <label class="css-control css-control-primary css-checkbox">
-                                                        <input type="checkbox" class="css-control-input">
-                                                        <span class="css-control-indicator"></span>
-                                                    </label>
-                                                </td>
-                                                <td class="d-none d-sm-table-cell font-w600" style="width: 140px;">Alam Cahya Kumolo</td>
+                                                <td class="d-none d-sm-table-cell font-w600" style="width: 140px;">{{ $laporan->name }}</td>
                                                 <td>
-                                                    <a class="font-w600" href="#" target="blank" >Sakit perut tiba-tiba</a>
-                                                    <div class="text-muted mt-5">Alam mengalami sakit perut secara tiba-tiba di..</div>
+                                                    <a class="font-w600" href="#" target="blank" >{{ $laporan->judul }}</a>
+                                                    <div class="text-muted mt-5">{{ $laporan->detail }}</div>
                                                 </td>
-                                                <td class="d-none d-xl-table-cell font-w600 font-size-sm text-muted" style="width: 120px;">WED</td>
+                                                <td class="d-none d-xl-table-cell font-w600 font-size-sm text-muted" style="width: 120px;">{{ $laporan->waktu }}</td>
                                             </tr>
-                                            <tr>
-                                                <td class="text-center">
-                                                    <label class="css-control css-control-primary css-checkbox">
-                                                        <input type="checkbox" class="css-control-input">
-                                                        <span class="css-control-indicator"></span>
-                                                    </label>
-                                                </td>
-                                                <td class="d-none d-sm-table-cell font-w600">Alam Cahya Kumolo</td>
-                                                <td>
-                                                    <a class="font-w600" data-toggle="modal" data-target="#modal-message" href="#">Duel antar geng sekolah</a>
-                                                    <div class="text-muted mt-5">Alam bertengkar dengan ketua geng sekolah..</div>
-                                                </td>
-                                                <td class="d-none d-xl-table-cell font-w600 font-size-sm text-muted">WED</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">
-                                                    <label class="css-control css-control-primary css-checkbox">
-                                                        <input type="checkbox" class="css-control-input">
-                                                        <span class="css-control-indicator"></span>
-                                                    </label>
-                                                </td>
-                                                <td class="d-none d-sm-table-cell font-w600">Fandy "Jinusean" Mohammad</td>
-                                                <td>
-                                                    <a class="font-w600" data-toggle="modal" data-target="#modal-message" href="#">Menangis saat main Dota 2</a>
-                                                    <div class="text-muted mt-5">Setelah pelajaran e-sport, Fandy menangis..</div>
-                                                </td>
-                                                <td class="d-none d-xl-table-cell font-w600 font-size-sm text-muted">FRI</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">
-                                                    <label class="css-control css-control-primary css-checkbox">
-                                                        <input type="checkbox" class="css-control-input">
-                                                        <span class="css-control-indicator"></span>
-                                                    </label>
-                                                </td>
-                                                <td class="d-none d-sm-table-cell font-w600">Abyan "myans" Dafa</td>
-                                                <td>
-                                                    <a class="font-w600" data-toggle="modal" data-target="#modal-message" href="#">Mengurung diri seharian</a>
-                                                    <div class="text-muted mt-5">Apakah ada kejadian di rumah sehingga Abyan..</div>
-                                                </td>
-                                                <td class="d-none d-xl-table-cell font-w600 font-size-sm text-muted">THU</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">
-                                                    <label class="css-control css-control-primary css-checkbox">
-                                                        <input type="checkbox" class="css-control-input">
-                                                        <span class="css-control-indicator"></span>
-                                                    </label>
-                                                </td>
-                                                <td class="d-none d-sm-table-cell font-w600">Alam Cahya Kumolo</td>
-                                                <td>
-                                                    <a class="font-w600" data-toggle="modal" data-target="#modal-message" href="#">Mencontek jawaban sekolah sebelah</a>
-                                                    <div class="text-muted mt-5">Alam berusaha mencontek namun salah sekolah..</div>
-                                                </td>
-                                                <td class="d-none d-xl-table-cell font-w600 font-size-sm text-muted">MON</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">
-                                                    <label class="css-control css-control-primary css-checkbox">
-                                                        <input type="checkbox" class="css-control-input">
-                                                        <span class="css-control-indicator"></span>
-                                                    </label>
-                                                </td>
-                                                <td class="d-none d-sm-table-cell font-w600">Abyan "myans" Dafa</td>
-                                                <td>
-                                                    <a class="font-w600" data-toggle="modal" data-target="#modal-message" href="#">Kabur dari sekolah</a>
-                                                    <div class="text-muted mt-5">Abyan terlihat meninggalkan lingkungan sekolah..</div>
-                                                </td>
-                                                <td class="d-none d-xl-table-cell font-w600 font-size-sm text-muted">MON</td>
-                                            </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                     <!-- END Messages -->
