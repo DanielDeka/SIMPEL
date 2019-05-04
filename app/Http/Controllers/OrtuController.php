@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Ortu;
 use App\Siswa;
+use App\Komentar;
 use App\Nilai;
 use App\Pelajaran;
 
@@ -55,5 +56,13 @@ class OrtuController extends Controller
         
         $pelajaran = Pelajaran::all();
         return view('ortu.raport', compact('nilai','pelajaran','siswa'));
+    }
+
+    public function comment($id)
+    {
+        $data['komentars'] = Komentar::where('id_laporan', $id)->get();
+        $data['laporan'] = Laporan::where('id', $id)->first();
+        //dd($data['comment']);
+        return view('ortu.komentar_laporan', $data);
     }
 }
