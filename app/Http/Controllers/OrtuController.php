@@ -26,10 +26,7 @@ class OrtuController extends Controller
             return redirect()->back();
         }
     }
-    public function absensi()
-    {
-        return view('ortu.absensi');
-    }
+
     public function laporan()
     {
         return view('ortu.laporan');

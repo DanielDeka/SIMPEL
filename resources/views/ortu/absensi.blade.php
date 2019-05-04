@@ -7,11 +7,11 @@
     <body>
         <div id="page-container" class="sidebar-o sidebar-inverse side-scroll page-header-fixed main-content-boxed">
             <!-- Sidebar -->
-            @include('guru.layout.sidebar')            
+            @include('ortu.layout.sidebar')            
             <!-- END Sidebar -->
 
             <!-- Header -->
-            @include('guru.layout.header')
+            @include('ortu.layout.header')
             <!-- END Header -->
 
             <!-- Main Container -->
