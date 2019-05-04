@@ -32,7 +32,7 @@
                         <!-- Color Themes + A few of the many header options (used just for demonstration) -->
                         <!-- Themes functionality initialized in Codebase() -> uiHandleTheme() -->
                         <div class="btn-group ml-5" role="group">
-                            <button type="button" class="btn btn-circle btn-danger">
+                            <button type="button" class="btn btn-circle btn-danger" data-toggle="modal" data-target=".bd-example-modal-lg">
                                 <i class="fa fa-user"></i>
                             </button>
                         </div>
@@ -95,17 +95,17 @@
                                     <p class="text-right py-100">
                                         <span class="font-w700 mr-5 font-size-h2 text-danger">SIMPEL</span>
                                         <br>
-                                        <span class="font-w700 mr-5 font-size-xl text">Sistem Monitoring Pelajar</span>
+                                        <span class="font-w700 mr-5 font-size-xl text">Sistem Informasi Monitoring Pelajar</span>
                                         <br>
-                                        Pantau kegiatan anak anda di sekolah,
+                                        Pantau kegiatan dan kondisi anak anda di sekolah,
                                         <br>
-                                        kapan saja dan dimana saja.
+                                        dimana saja dan kapan saja.
                                     </p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm">
-                            <div class="block block-rounded bg-image" style="background-image: url({{asset('assets/codebase/assets/img/photos/alam.jpg')}});">
+                            <div class="block block-rounded bg-image" style="background-image: url({{asset('assets/codebase/assets/img/photos/component.png')}});">
                                 <div class="block-content">
                                     <p class="text-right py-200">
                                     </p>
@@ -118,16 +118,48 @@
             </main>
             <!-- END Main Container -->
 
+            <!-- Large modal -->
+            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button> -->
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="width: 100vw; height: 100vw;">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myLargeModalLabel" style="color: #E21313;">Masuk dengan akun Anda</h4>
+                            <button type="button" class="btn btn-circle btn-danger" data-dismiss="modal" aria-label="Close">
+                                <i class="fa fa-close"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body" style="">
+                            <div>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
+                                    <a href="index.html" style="color: #FAFAFA;">Sebagai Guru</a>
+                                </button>
+                            </div>
+                            <div>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
+                                    <a href="index.html" style="color: #FAFAFA;">Sebagai Orangtua</a>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="modal-footer" style="color: #E21313;">
+                            <span class="float-left">
+                                Belum punya akun? Hubungi kami <b><a href="index.html" style="color: #E21313;">disini</a></b>.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- Footer -->
             <footer id="page-footer" class="opacity-0">
-                <div class="content py-20 font-size-xs clearfix">
+                <!-- <div class="content py-20 font-size-xs clearfix">
                     <div class="float-right">
                         Crafted with <i class="fa fa-heart text-pulse"></i> by <a class="font-w600" href="http://goo.gl/vNS3I" target="_blank">pixelcave</a>
                     </div>
                     <div class="float-left">
                         <a class="font-w600" href="https://goo.gl/po9Usv" target="_blank">Codebase 2.0</a> &copy; <span class="js-year-copy">2017</span>
                     </div>
-                </div>
+                </div> -->
+                <a class="font-w600" href="https://goo.gl/po9Usv">Tentang kita</a>
             </footer>
             <!-- END Footer -->
         </div>
