@@ -23,5 +23,7 @@ Route::group(['prefix' => 'guru'], function(){
 	Route::get('/daftar_laporan', 'GuruController@daftarLaporan');
 });
 
+Route::get('ortu', 'OrtuController@index');
+
 Route::get('/test', 'TestController@getAllOrtu');
 
