@@ -41,10 +41,19 @@ class OrtuController extends Controller
         return view('ortu.laporan', $data);
     }
 
-    public function raport()
+    public function raport(Request $request)
     {
-        $nilai = Nilai::where('id_rapor',1)->get();
+        // dd($request->input('select2'));
+        $ortu = Ortu::where('id',$request->session()->get('user'))->first();
+        $siswa=Siswa::where('id_ortu',$ortu->id)->get();
+        if($request->input('select2') == null) {
+            $nilai = Nilai::where('id_rapor',1)->get();
+        }
+        else {
+            $nilai = Nilai::where('id_rapor',$request->input('select2'))->get();
+        }
+        
         $pelajaran = Pelajaran::all();
-        return view('ortu.raport', compact('nilai','pelajaran'));
+        return view('ortu.raport', compact('nilai','pelajaran','siswa'));
     }
 }
