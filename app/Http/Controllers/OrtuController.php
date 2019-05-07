@@ -36,12 +36,13 @@ class OrtuController extends Controller
     public function laporan(Request $request)
     {
         $siswa = Siswa::where('id_ortu', $request->session()->get('user'))->first();
+        //dd($siswa);
         $data['laporans'] = Laporan::where('id_siswa', $siswa->id)->get();
         foreach ($data['laporans'] as $laporan) {
             $laporan->name = Siswa::where('id', $laporan->id_siswa)->first()->nama;
         }
         
-       // dd($data['laporans']);
+        //dd($data['laporans']);
         return view('ortu.laporan', $data);
     }
 

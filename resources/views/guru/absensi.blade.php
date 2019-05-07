@@ -68,16 +68,6 @@
                                                 </td>
                                             </tr>
                                         @endforeach
-                                        </tbody>
-                                        
-                                        <input type="text" hidden id="ktl" value="besar">
-                                    </table>
-                                    <div class="form-group row">
-                                        <div class="col-md-9 pull-right">
-                                            <button type="submit" class="btn btn-alt-primary">Submit</button>
-                                        </div>
-                                    </div>
-                                        </form>
                                         @else
                                         <tbody>
                                             <tr>
@@ -90,6 +80,17 @@
                                             
                                         </tbody>
                                         @endif
+                                        </tbody>
+                                        
+                                        <input type="text" hidden id="ktl" value="besar">
+                                    </table>
+                                    <div class="form-group row">
+                                        <div class="col-md-9 pull-right">
+                                            <button type="submit" class="btn btn-alt-primary">Submit</button>
+                                        </div>
+                                    </div>
+                                        </form>
+                                       
                                 </div>
                             </div>
                         </div>

@@ -131,7 +131,7 @@ class GuruController extends Controller
                 'waktu' => Carbon::now('Asia/Jakarta'),
             ]);
         $data['guru'] = Guru::where('id',$request->session()->get('user'))->first();
-        return view('guru.daftar_laporan', $data);
+        return redirect('/guru');
     }
 
     public function comment($id)

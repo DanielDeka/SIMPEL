@@ -85,7 +85,7 @@
                                                 </form>
                                                     <div class="js-chat-form block-content block-content-full block-content-sm bg-body-light">
                                                         <form action="asdas.html" method="post">
-                                                            <input class="js-chat-input form-control" type="text" data-target-chat-id="4" placeholder="Type your message and hasdasdit enter..">
+                                                            <input class="js-chat-input form-control" type="text" data-target-chat-id="4" placeholder="Ketikkan Komentar anda lalu tekan enter..">
                                                         </form>
                                                     </div>
                                             </div>
